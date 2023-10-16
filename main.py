@@ -35,8 +35,8 @@ driver = webdriver.Chrome(service = service, options=options)
 
 username = 'myrow@beaconpa.com',
 password = 'Milo4242#'
-first_date = "06/26/2023"
-second_date = "06/26/2023"
+first_date = "10/16/2023"
+second_date = "10/16/2023"
 
 
 s = driver.get('https://plus.cq.com/login?fntoken&jumpto=https://plus.cq.com/schedules/other?1')
