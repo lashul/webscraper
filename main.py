@@ -173,4 +173,5 @@ with open(newsletter, 'w') as file:
     file.write("</body>")
     file.write("</html>")
 print(f"Saved to {newsletter}")
+print(open(newsletter, "r").read())
 webbrowser.open(newsletter)
