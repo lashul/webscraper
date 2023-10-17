@@ -108,7 +108,7 @@ def index():
                                 links.append('https://plus.cq.com' + x[1])
                                 categories.append(a.text)
                 try:
-                    driver.find_element("id", "id26").click()
+                    driver.find_element("id", "id24").click()
                     time.sleep(4)
                     pagesource = driver.page_source
                     soup = BeautifulSoup(pagesource, "html.parser")
