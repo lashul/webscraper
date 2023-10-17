@@ -1,24 +1,202 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Web Scraper</title>
-</head>
-<body>
-    <h1>Web Scraper</h1>
-    <form method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" required><br>
+    <style>
+      body {
+        align-items: center;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+      }
 
-        <label for="password">Password:</label>
-        <input type="password" name="password" required><br>
+      .form {
+        background-color: #15172b;
+        border-radius: 20px;
+        box-sizing: border-box;
+        height: 550px;
+        padding: 20px;
+        width: 320px;
+      }
 
-        <label for="first_date">First Date:</label>
-        <input type="text" name="first_date" required><br>
+      .title {
+        color: #eee;
+        font-family: sans-serif;
+        font-size: 36px;
+        font-weight: 600;
+        margin-top: 30px;
+      }
 
-        <label for="last_date">Last Date:</label>
-        <input type="text" name="last_date" required><br>
+      .subtitle {
+        color: #eee;
+        font-family: sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        margin-top: 10px;
+      }
 
-        <input type="submit" value="Scrape">
-    </form>
-</body>
+      .input-container {
+        height: 50px;
+        position: relative;
+        width: 100%;
+      }
+
+      .ic1 {
+        margin-top: 40px;
+      }
+
+      .ic2 {
+        margin-top: 30px;
+      }
+
+      .input {
+        background-color: #303245;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        font-size: 18px;
+        height: 100%;
+        outline: 0;
+        padding: 4px 20px 0;
+        width: 100%;
+      }
+
+      .cut {
+        background-color: #15172b;
+        border-radius: 10px;
+        height: 20px;
+        left: 20px;
+        position: absolute;
+        top: -20px;
+        transform: translateY(0);
+        transition: transform 200ms;
+        width: 76px;
+      }
+
+      .cut-short {
+        width: 50px;
+      }
+
+      .input:focus ~ .cut,
+      .input:not(:placeholder-shown) ~ .cut {
+        transform: translateY(8px);
+      }
+
+      .placeholder {
+        color: #65657b;
+        font-family: sans-serif;
+        left: 20px;
+        line-height: 14px;
+        pointer-events: none;
+        position: absolute;
+        transform-origin: 0 50%;
+        transition: transform 200ms, color 200ms;
+        top: 20px;
+      }
+
+      .input:focus ~ .placeholder,
+      .input:not(:placeholder-shown) ~ .placeholder {
+        transform: translateY(-30px) translateX(10px) scale(0.75);
+      }
+
+      .input:not(:placeholder-shown) ~ .placeholder {
+        color: #808097;
+      }
+
+      .input:focus ~ .placeholder {
+        color: #dc2f55;
+      }
+
+      .submit {
+        background-color: #08d;
+        border-radius: 12px;
+        border: 0;
+        box-sizing: border-box;
+        color: #eee;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 38px;
+        text-align: center;
+        width: 100%;
+      }
+
+      .submit:active {
+        background-color: #06b;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <h1>Web Scraper</h1>
+     <form method="POST">
+      <label for="username">Username:</label
+      ><input type="text" name="username" required /><br /><label for="password"
+        >Password:</label
+      ><input type="password" name="password" required /><br /><label
+        for="first_date"
+        >First Date:</label
+      ><input type="text" name="first_date" required /><br /><label
+        for="last_date"
+        >Last Date:</label
+      ><input type="text" name="last_date" required /><br /><input
+        type="submit"
+        value="Scrape"
+      />
+    </form> -->
+
+    <div class="form">
+      <form method="POST">
+        <div class="title">Welcome</div>
+        <div class="subtitle">Let's Scrape!</div>
+        <div class="input-container ic1">
+          <input
+            id="username"
+            name="username"
+            class="input"
+            type="text"
+            placeholder=" "
+          />
+          <div class="cut"></div>
+          <label for="username" class="placeholder">Username</label>
+        </div>
+        <div class="input-container ic2">
+          <input
+            id="password"
+            name="password"
+            class="input"
+            type="password"
+            placeholder=" "
+          />
+          <div class="cut"></div>
+          <label for="password" class="placeholder">Password</label>
+        </div>
+        <div class="input-container ic2">
+          <input
+            id="first_date"
+            name="first_date"
+            class="input"
+            type="text"
+            placeholder=" "
+          />
+          <div class="cut"></div>
+          <label for="first_date" class="placeholder">First Date</label>
+        </div>
+        <div class="input-container ic2">
+          <input
+            id="last_date"
+            name="last_date"
+            class="input"
+            type="text"
+            placeholder=" "
+          />
+          <div class="cut"></div>
+          <label for="last_date" class="placeholder">Last Date</label>
+        </div>
+        <button type="text" class="submit">Scrape</button>
+      </form>
+    </div>
+  </body>
 </html>
